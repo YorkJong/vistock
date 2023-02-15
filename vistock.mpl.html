@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>vistock.mpl package &mdash; vistock 0.2.4 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="vistock.plotly package" href="vistock.plotly.html" />
+    <link rel="prev" title="vistock package" href="vistock.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            vistock
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">vistock</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="vistock.html">vistock package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="vistock.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">vistock.mpl package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="vistock.plotly.html">vistock.plotly package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="vistock.html#module-vistock">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">vistock</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">vistock</a></li>
+          <li class="breadcrumb-item"><a href="vistock.html">vistock package</a></li>
+      <li class="breadcrumb-item active">vistock.mpl package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/vistock.mpl.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="vistock-mpl-package">
+<h1>vistock.mpl package<a class="headerlink" href="#vistock-mpl-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-vistock.mpl.pbv">
+<span id="vistock-mpl-pbv-module"></span><h2>vistock.mpl.pbv module<a class="headerlink" href="#module-vistock.mpl.pbv" title="Permalink to this heading"></a></h2>
+<p>Visualize a PBV (means price-by-volume, also called volume profile) for a given
+stock. Here the PBV is overlaid with the price subplot (total 2 subplots).</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="vistock.mpl.pbv.plot">
+<span class="sig-prename descclassname"><span class="pre">vistock.mpl.pbv.</span></span><span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ticker</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'TSLA'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'12mo'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1d'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ma_nitems</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(5,</span> <span class="pre">10,</span> <span class="pre">20,</span> <span class="pre">50,</span> <span class="pre">150)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vma_nitems</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">42</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend_loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'best'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vistock/mpl/pbv.html#plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vistock.mpl.pbv.plot" title="Permalink to this definition"></a></dt>
+<dd><p>Plot a price-by-volume, PBV (also called volume profile) figure for a
+given stock.</p>
+<p>Here the PBV is overlaid with the price subplot. This figure consists of
+two subplots: a price subplot and a volume subplot. The former includes
+price candlesticks, price moving average lines, while the latter includes
+a trading volume histogram and a volume moving average line.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ticker</strong> (<em>str</em>) – the ticker name.</p></li>
+<li><p><strong>period</strong> (<em>str</em>) – <p>the period data to download. Valid values are 1d, 5d, 1mo, 3mo, 6mo,
+1y, 2y, 5y, 10y, ytd, max.</p>
+<blockquote>
+<div><ul>
+<li><p>d   – days</p></li>
+<li><p>mo  – monthes</p></li>
+<li><p>y   – years</p></li>
+<li><p>ytd – year to date</p></li>
+<li><p>max – all data</p></li>
+</ul>
+</div></blockquote>
+</p></li>
+<li><p><strong>interval</strong> (<em>str</em>) – <p>the interval of an OHLC item. Valid values are 1m, 2m, 5m, 15m, 30m,
+60m, 90m, 1h, 1d, 5d, 1wk, 1mo, 3mo.</p>
+<blockquote>
+<div><ul>
+<li><p>m  – minutes</p></li>
+<li><p>h  – hours</p></li>
+<li><p>wk – weeks</p></li>
+<li><p>mo – monthes</p></li>
+</ul>
+</div></blockquote>
+<dl class="simple">
+<dt>Intraday data cannot extend last 60 days:</dt><dd><ul>
+<li><p>1m - max 7 days within last 30 days</p></li>
+<li><p>up to 90m - max 60 days</p></li>
+<li><p>60m, 1h - max 730 days (yes 1h is technically &lt; 90m but this what
+Yahoo does)</p></li>
+</ul>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>ma_nitems</strong> (<em>sequence</em><em> of </em><em>int</em>) – a sequence to list the number of data items to calclate moving averges.</p></li>
+<li><p><strong>vma_nitems</strong> (<em>int</em>) – the number of data items to calculate the volume moving average.</p></li>
+<li><p><strong>total_bins</strong> (<em>int</em>) – the number of bins to calculate comulative volume for bins.</p></li>
+<li><p><strong>legend_loc</strong> (<em>str</em>) – <dl class="simple">
+<dt>the location of the legend. Valid locations are</dt><dd><ul>
+<li><p>’best’</p></li>
+<li><p>’upper right’</p></li>
+<li><p>’upper left’</p></li>
+<li><p>’lower left’</p></li>
+<li><p>’lower right’</p></li>
+<li><p>’right’</p></li>
+<li><p>’center left’</p></li>
+<li><p>’center right’</p></li>
+<li><p>’lower center’</p></li>
+<li><p>’upper center’</p></li>
+<li><p>’center’</p></li>
+</ul>
+</dd>
+</dl>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-vistock.mpl.rsi">
+<span id="vistock-mpl-rsi-module"></span><h2>vistock.mpl.rsi module<a class="headerlink" href="#module-vistock.mpl.rsi" title="Permalink to this heading"></a></h2>
+<p>Plot a 3-split (price, volume, RSI) stock chart.</p>
+<ul class="simple">
+<li><p>Data from yfinance</p></li>
+<li><p>Plot with mplfinance</p></li>
+<li><p>RSI from TA-Lib</p></li>
+</ul>
+<dl class="py function">
+<dt class="sig sig-object py" id="vistock.mpl.rsi.plot">
+<span class="sig-prename descclassname"><span class="pre">vistock.mpl.rsi.</span></span><span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ticker</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'TSLA'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'12mo'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1d'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ma_nitems</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(5,</span> <span class="pre">10,</span> <span class="pre">20,</span> <span class="pre">50,</span> <span class="pre">150)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vma_nitems</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend_loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'best'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vistock/mpl/rsi.html#plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vistock.mpl.rsi.plot" title="Permalink to this definition"></a></dt>
+<dd><p>Plot a stock figure that consists 3 suplots: a price subplot, a
+volume subplot, and a RSI subplot.</p>
+<p>The price subplot shows price candlesticks, and price moving-average lines.
+The volume subplot shows a volume bar chart and a volume moving average
+line. The RSI subplot shows only the RSI curve.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ticker</strong> (<em>str</em>) – the ticker name.</p></li>
+<li><p><strong>period</strong> (<em>str</em>) – <p>the period data to download. Valid values are 1d, 5d, 1mo, 3mo, 6mo,
+1y, 2y, 5y, 10y, ytd, max.</p>
+<blockquote>
+<div><ul>
+<li><p>d   – days</p></li>
+<li><p>mo  – monthes</p></li>
+<li><p>y   – years</p></li>
+<li><p>ytd – year to date</p></li>
+<li><p>max – all data</p></li>
+</ul>
+</div></blockquote>
+</p></li>
+<li><p><strong>interval</strong> (<em>str</em>) – <p>the interval of an OHLC item. Valid values are 1m, 2m, 5m, 15m, 30m,
+60m, 90m, 1h, 1d, 5d, 1wk, 1mo, 3mo.</p>
+<blockquote>
+<div><ul>
+<li><p>m  – minutes</p></li>
+<li><p>h  – hours</p></li>
+<li><p>wk – weeks</p></li>
+<li><p>mo – monthes</p></li>
+</ul>
+</div></blockquote>
+<dl class="simple">
+<dt>Intraday data cannot extend last 60 days:</dt><dd><ul>
+<li><p>1m - max 7 days within last 30 days</p></li>
+<li><p>up to 90m - max 60 days</p></li>
+<li><p>60m, 1h - max 730 days (yes 1h is technically &lt; 90m but this what
+Yahoo does)</p></li>
+</ul>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>ma_nitems</strong> (<em>sequence</em><em> of </em><em>int</em>) – a sequence to list the number of data items to calclate moving averges.</p></li>
+<li><p><strong>vma_nitems</strong> (<em>int</em>) – the number of data items to calculate the volume moving average.</p></li>
+<li><p><strong>legend_loc</strong> (<em>str</em>) – <dl class="simple">
+<dt>the location of the legend. Valid locations are</dt><dd><ul>
+<li><p>’best’</p></li>
+<li><p>’upper right’</p></li>
+<li><p>’upper left’</p></li>
+<li><p>’lower left’</p></li>
+<li><p>’lower right’</p></li>
+<li><p>’right’</p></li>
+<li><p>’center left’</p></li>
+<li><p>’center right’</p></li>
+<li><p>’lower center’</p></li>
+<li><p>’upper center’</p></li>
+<li><p>’center’</p></li>
+</ul>
+</dd>
+</dl>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-vistock.mpl">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-vistock.mpl" title="Permalink to this heading"></a></h2>
+<p>Initialize vistock.mpl package.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="vistock.html" class="btn btn-neutral float-left" title="vistock package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="vistock.plotly.html" class="btn btn-neutral float-right" title="vistock.plotly package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, York Jong.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
