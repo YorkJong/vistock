@@ -79,15 +79,17 @@
 <span class="sd">* RSI from TA-Lib</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="n">__software__</span> <span class="o">=</span> <span class="s2">&quot;Stock chart of price, volume, and RSI&quot;</span>
-<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;1.1&quot;</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;1.2&quot;</span>
 <span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;York &lt;york.jong@gmail.com&gt;&quot;</span>
-<span class="n">__date__</span> <span class="o">=</span> <span class="s2">&quot;2023/02/02 (initial version) ~ 2023/02/14 (last revision)&quot;</span>
+<span class="n">__date__</span> <span class="o">=</span> <span class="s2">&quot;2023/02/02 (initial version) ~ 2023/02/19 (last revision)&quot;</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;plot&#39;</span><span class="p">]</span>
 
 <span class="kn">import</span> <span class="nn">yfinance</span> <span class="k">as</span> <span class="nn">yf</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">mplfinance</span> <span class="k">as</span> <span class="nn">mpf</span>
+
+<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">tw</span>
 
 
 <span class="k">def</span> <span class="nf">installed</span><span class="p">(</span><span class="n">module_name</span><span class="p">):</span>
@@ -101,13 +103,7 @@
         <span class="k">return</span> <span class="kc">False</span>
 
 
-<span class="k">if</span> <span class="n">installed</span><span class="p">(</span><span class="s1">&#39;talib&#39;</span><span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">talib</span> <span class="kn">import</span> <span class="n">abstract</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Please install &quot;talib&quot; package.&#39;</span><span class="p">)</span>
-
-
-<div class="viewcode-block" id="plot"><a class="viewcode-back" href="../../../vistock.mpl.html#vistock.mpl.rsi.plot">[docs]</a><span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="n">ticker</span><span class="o">=</span><span class="s1">&#39;TSLA&#39;</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="s1">&#39;12mo&#39;</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="s1">&#39;1d&#39;</span><span class="p">,</span>
+<div class="viewcode-block" id="plot"><a class="viewcode-back" href="../../../vistock.mpl.html#vistock.mpl.rsi.plot">[docs]</a><span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="n">symbol</span><span class="o">=</span><span class="s1">&#39;TSLA&#39;</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="s1">&#39;12mo&#39;</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="s1">&#39;1d&#39;</span><span class="p">,</span>
          <span class="n">ma_nitems</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">150</span><span class="p">),</span> <span class="n">vma_nitems</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">legend_loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Plot a stock figure that consists 3 suplots: a price subplot, a</span>
 <span class="sd">    volume subplot, and a RSI subplot.</span>
@@ -118,8 +114,8 @@
 
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
-<span class="sd">    ticker: str</span>
-<span class="sd">        the ticker name.</span>
+<span class="sd">    symbol: str</span>
+<span class="sd">        the stock symbol.</span>
 <span class="sd">    period: str</span>
 <span class="sd">        the period data to download. Valid values are 1d, 5d, 1mo, 3mo, 6mo,</span>
 <span class="sd">        1y, 2y, 5y, 10y, ytd, max.</span>
@@ -159,7 +155,8 @@
 <span class="sd">            * &#39;center&#39;</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Download stock data</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">yf</span><span class="o">.</span><span class="n">Ticker</span><span class="p">(</span><span class="n">ticker</span><span class="p">)</span><span class="o">.</span><span class="n">history</span><span class="p">(</span><span class="n">period</span><span class="o">=</span><span class="n">period</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="n">interval</span><span class="p">)</span>
+    <span class="n">symbol</span> <span class="o">=</span> <span class="n">tw</span><span class="o">.</span><span class="n">as_yfinance</span><span class="p">(</span><span class="n">symbol</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">yf</span><span class="o">.</span><span class="n">Ticker</span><span class="p">(</span><span class="n">symbol</span><span class="p">)</span><span class="o">.</span><span class="n">history</span><span class="p">(</span><span class="n">period</span><span class="o">=</span><span class="n">period</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="n">interval</span><span class="p">)</span>
 
     <span class="c1"># Add Volume Moving Average</span>
     <span class="n">vma</span> <span class="o">=</span> <span class="n">mpf</span><span class="o">.</span><span class="n">make_addplot</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Volume&#39;</span><span class="p">],</span> <span class="n">mav</span><span class="o">=</span><span class="n">vma_nitems</span><span class="p">,</span>
@@ -167,10 +164,13 @@
     <span class="n">addplot</span> <span class="o">=</span> <span class="p">[</span><span class="n">vma</span><span class="p">]</span>
 
     <span class="k">if</span> <span class="n">installed</span><span class="p">(</span><span class="s1">&#39;talib&#39;</span><span class="p">):</span>
+        <span class="kn">from</span> <span class="nn">talib</span> <span class="kn">import</span> <span class="n">abstract</span>
         <span class="c1"># Add RSI</span>
         <span class="n">RSI</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">df</span><span class="p">,</span> <span class="n">period</span><span class="p">:</span> <span class="n">abstract</span><span class="o">.</span><span class="n">RSI</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">timeperiod</span><span class="o">=</span><span class="n">period</span><span class="p">)</span>
         <span class="n">rsi</span> <span class="o">=</span> <span class="n">mpf</span><span class="o">.</span><span class="n">make_addplot</span><span class="p">(</span><span class="n">RSI</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">],</span> <span class="mi">14</span><span class="p">),</span> <span class="n">panel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;RSI&#39;</span><span class="p">)</span>
         <span class="n">addplot</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rsi</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Please install &quot;talib&quot; package.&#39;</span><span class="p">)</span>
 
     <span class="c1"># Plot candlesticks MA, volume, volume MA, RSI</span>
     <span class="n">colors</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;cyan&#39;</span><span class="p">,</span> <span class="s1">&#39;magenta&#39;</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">)</span>
@@ -183,7 +183,7 @@
     <span class="p">)</span>
     <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="sa">f</span><span class="s1">&#39;MA </span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">ma_nitems</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="n">legend_loc</span><span class="p">)</span>
     <span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M&#39;</span><span class="p">)</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ticker</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">interval</span><span class="si">}</span><span class="s2"> &quot;</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">symbol</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">interval</span><span class="si">}</span><span class="s2"> &quot;</span>
                  <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">~</span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">,</span>
                  <span class="n">y</span><span class="o">=</span><span class="mf">0.93</span><span class="p">)</span>
 
@@ -191,7 +191,7 @@
     <span class="n">mpf</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
     <span class="c1"># Write the figure to an PNG file</span>
-    <span class="n">info</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ticker</span><span class="si">}</span><span class="s1">_</span><span class="si">{</span><span class="n">interval</span><span class="si">}</span><span class="s1">_</span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="n">info</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">symbol</span><span class="si">}</span><span class="s1">_</span><span class="si">{</span><span class="n">interval</span><span class="si">}</span><span class="s1">_</span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span>
     <span class="n">info</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="n">translate</span><span class="p">({</span><span class="nb">ord</span><span class="p">(</span><span class="n">i</span><span class="p">):</span> <span class="kc">None</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="s1">&#39;:-&#39;</span><span class="p">})</span>   <span class="c1"># remove &#39;:&#39;, &#39;-&#39;</span>
     <span class="n">info</span> <span class="o">=</span> <span class="n">info</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;_&#39;</span><span class="p">)</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">info</span><span class="si">}</span><span class="s1">_rsi.png&#39;</span><span class="p">)</span></div>
