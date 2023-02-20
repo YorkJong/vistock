@@ -113,41 +113,35 @@ a trading volume histogram and a volume moving average line.</p>
 <li><p><strong>symbol</strong> (<em>str</em>) – the stock symbol.</p></li>
 <li><p><strong>period</strong> (<em>str</em>) – <p>the period data to download. Valid values are 1d, 5d, 1mo, 3mo, 6mo,
 1y, 2y, 5y, 10y, ytd, max.</p>
-<blockquote>
-<div><ul>
+<ul>
 <li><p>d   – days</p></li>
 <li><p>mo  – monthes</p></li>
 <li><p>y   – years</p></li>
 <li><p>ytd – year to date</p></li>
 <li><p>max – all data</p></li>
 </ul>
-</div></blockquote>
 </p></li>
 <li><p><strong>interval</strong> (<em>str</em>) – <p>the interval of an OHLC item. Valid values are 1m, 2m, 5m, 15m, 30m,
 60m, 90m, 1h, 1d, 5d, 1wk, 1mo, 3mo.</p>
-<blockquote>
-<div><ul>
+<ul>
 <li><p>m  – minutes</p></li>
 <li><p>h  – hours</p></li>
 <li><p>wk – weeks</p></li>
 <li><p>mo – monthes</p></li>
 </ul>
-</div></blockquote>
-<dl class="simple">
-<dt>Intraday data cannot extend last 60 days:</dt><dd><ul>
+<p>Intraday data cannot extend last 60 days:</p>
+<ul>
 <li><p>1m - max 7 days within last 30 days</p></li>
 <li><p>up to 90m - max 60 days</p></li>
 <li><p>60m, 1h - max 730 days (yes 1h is technically &lt; 90m but this what
 Yahoo does)</p></li>
 </ul>
-</dd>
-</dl>
 </p></li>
 <li><p><strong>ma_nitems</strong> (<em>sequence</em><em> of </em><em>int</em>) – a sequence to list the number of data items to calclate moving averges.</p></li>
 <li><p><strong>vma_nitems</strong> (<em>int</em>) – the number of data items to calculate the volume moving average.</p></li>
 <li><p><strong>total_bins</strong> (<em>int</em>) – the number of bins to calculate comulative volume for bins.</p></li>
-<li><p><strong>legend_loc</strong> (<em>str</em>) – <dl class="simple">
-<dt>the location of the legend. Valid locations are</dt><dd><ul>
+<li><p><strong>legend_loc</strong> (<em>str</em>) – <p>the location of the legend. Valid locations are</p>
+<ul>
 <li><p>’best’</p></li>
 <li><p>’upper right’</p></li>
 <li><p>’upper left’</p></li>
@@ -160,8 +154,6 @@ Yahoo does)</p></li>
 <li><p>’upper center’</p></li>
 <li><p>’center’</p></li>
 </ul>
-</dd>
-</dl>
 </p></li>
 <li><p><strong>out_dir</strong> (<em>str</em>) – the output directory for saving figure.</p></li>
 </ul>
@@ -192,40 +184,34 @@ line. The RSI subplot shows only the RSI curve.</p>
 <li><p><strong>symbol</strong> (<em>str</em>) – the stock symbol.</p></li>
 <li><p><strong>period</strong> (<em>str</em>) – <p>the period data to download. Valid values are 1d, 5d, 1mo, 3mo, 6mo,
 1y, 2y, 5y, 10y, ytd, max.</p>
-<blockquote>
-<div><ul>
+<ul>
 <li><p>d   – days</p></li>
 <li><p>mo  – monthes</p></li>
 <li><p>y   – years</p></li>
 <li><p>ytd – year to date</p></li>
 <li><p>max – all data</p></li>
 </ul>
-</div></blockquote>
 </p></li>
 <li><p><strong>interval</strong> (<em>str</em>) – <p>the interval of an OHLC item. Valid values are 1m, 2m, 5m, 15m, 30m,
 60m, 90m, 1h, 1d, 5d, 1wk, 1mo, 3mo.</p>
-<blockquote>
-<div><ul>
+<ul>
 <li><p>m  – minutes</p></li>
 <li><p>h  – hours</p></li>
 <li><p>wk – weeks</p></li>
 <li><p>mo – monthes</p></li>
 </ul>
-</div></blockquote>
-<dl class="simple">
-<dt>Intraday data cannot extend last 60 days:</dt><dd><ul>
+<p>Intraday data cannot extend last 60 days:</p>
+<ul>
 <li><p>1m - max 7 days within last 30 days</p></li>
 <li><p>up to 90m - max 60 days</p></li>
 <li><p>60m, 1h - max 730 days (yes 1h is technically &lt; 90m but this what
 Yahoo does)</p></li>
 </ul>
-</dd>
-</dl>
 </p></li>
 <li><p><strong>ma_nitems</strong> (<em>sequence</em><em> of </em><em>int</em>) – a sequence to list the number of data items to calclate moving averges.</p></li>
 <li><p><strong>vma_nitems</strong> (<em>int</em>) – the number of data items to calculate the volume moving average.</p></li>
-<li><p><strong>legend_loc</strong> (<em>str</em>) – <dl class="simple">
-<dt>the location of the legend. Valid locations are</dt><dd><ul>
+<li><p><strong>legend_loc</strong> (<em>str</em>) – <p>the location of the legend. Valid locations are</p>
+<ul>
 <li><p>’best’</p></li>
 <li><p>’upper right’</p></li>
 <li><p>’upper left’</p></li>
@@ -238,8 +224,6 @@ Yahoo does)</p></li>
 <li><p>’upper center’</p></li>
 <li><p>’center’</p></li>
 </ul>
-</dd>
-</dl>
 </p></li>
 <li><p><strong>out_dir</strong> (<em>str</em>) – the output directory for saving figure.</p></li>
 </ul>

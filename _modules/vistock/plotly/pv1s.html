@@ -108,23 +108,29 @@
 <span class="sd">    period: str</span>
 <span class="sd">        the period data to download. Valid values are 1d, 5d, 1mo, 3mo, 6mo,</span>
 <span class="sd">        1y, 2y, 5y, 10y, ytd, max.</span>
-<span class="sd">            * d   -- days</span>
-<span class="sd">            * mo  -- monthes</span>
-<span class="sd">            * y   -- years</span>
-<span class="sd">            * ytd -- year to date</span>
-<span class="sd">            * max -- all data</span>
+
+<span class="sd">        * d   -- days</span>
+<span class="sd">        * mo  -- monthes</span>
+<span class="sd">        * y   -- years</span>
+<span class="sd">        * ytd -- year to date</span>
+<span class="sd">        * max -- all data</span>
+
 <span class="sd">    interval: str</span>
 <span class="sd">        the interval of an OHLC item. Valid values are 1m, 2m, 5m, 15m, 30m,</span>
 <span class="sd">        60m, 90m, 1h, 1d, 5d, 1wk, 1mo, 3mo.</span>
-<span class="sd">            * m  -- minutes</span>
-<span class="sd">            * h  -- hours</span>
-<span class="sd">            * wk -- weeks</span>
-<span class="sd">            * mo -- monthes</span>
+
+<span class="sd">        * m  -- minutes</span>
+<span class="sd">        * h  -- hours</span>
+<span class="sd">        * wk -- weeks</span>
+<span class="sd">        * mo -- monthes</span>
+
 <span class="sd">        Intraday data cannot extend last 60 days:</span>
-<span class="sd">            * 1m - max 7 days within last 30 days</span>
-<span class="sd">            * up to 90m - max 60 days</span>
-<span class="sd">            * 60m, 1h - max 730 days (yes 1h is technically &lt; 90m but this what</span>
-<span class="sd">              Yahoo does)</span>
+
+<span class="sd">        * 1m - max 7 days within last 30 days</span>
+<span class="sd">        * up to 90m - max 60 days</span>
+<span class="sd">        * 60m, 1h - max 730 days (yes 1h is technically &lt; 90m but this what</span>
+<span class="sd">          Yahoo does)</span>
+
 <span class="sd">    ma_nitems: sequence of int</span>
 <span class="sd">        a sequence to list the number of data items to calclate moving averges.</span>
 <span class="sd">    vma_nitems: int</span>
