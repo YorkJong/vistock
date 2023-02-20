@@ -364,7 +364,11 @@
 <span class="sd">        symbol (str): a stock name or a stock code.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        [(name, code)...]: a list of stocks.</span>
+<span class="sd">        [(name:str, code:str)...]: a list of stock name-code pairs.</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">        &gt;&gt;&gt; similar_stocks(&#39;印度&#39;)</span>
+<span class="sd">        [(&#39;富邦印度&#39;, &#39;00652&#39;), (&#39;富邦印度正2&#39;, &#39;00653L&#39;), (&#39;富邦印度反1&#39;, &#39;00654R&#39;)]</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># for listed stocks</span>
     <span class="n">similar_listed_stocks</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span>
