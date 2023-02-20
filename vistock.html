@@ -192,6 +192,13 @@ string if it is valid. Returns an empty string if the path is invalid.</p>
 otherwise an empty string.</p>
 </dd>
 </dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">make_dir</span><span class="p">(</span><span class="s2">&quot;./out/&quot;</span><span class="p">)</span>
+<span class="go">&#39;out&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">make_dir</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>  <span class="c1"># &#39;:&#39; is not a valid character for directory names.</span>
+<span class="go">&#39;&#39;</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </section>

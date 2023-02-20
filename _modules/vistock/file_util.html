@@ -96,6 +96,12 @@
 <span class="sd">    Returns:</span>
 <span class="sd">        A string representing the original directory path if it is valid,</span>
 <span class="sd">        otherwise an empty string.</span>
+
+<span class="sd">    Examples:</span>
+<span class="sd">        &gt;&gt;&gt; make_dir(&quot;./out/&quot;)</span>
+<span class="sd">        &#39;out&#39;</span>
+<span class="sd">        &gt;&gt;&gt; make_dir(&quot;:&quot;)  # &#39;:&#39; is not a valid character for directory names.</span>
+<span class="sd">        &#39;&#39;</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">directory_path</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
