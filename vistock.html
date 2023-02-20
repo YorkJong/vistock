@@ -180,16 +180,19 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="vistock.file_util.make_dir">
-<span class="sig-prename descclassname"><span class="pre">vistock.file_util.</span></span><span class="sig-name descname"><span class="pre">make_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/vistock/file_util.html#make_dir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vistock.file_util.make_dir" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">vistock.file_util.</span></span><span class="sig-name descname"><span class="pre">make_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory_path</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vistock/file_util.html#make_dir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vistock.file_util.make_dir" title="Permalink to this definition"></a></dt>
 <dd><p>Creates a directory at the given path and returns the original path
 string if it is valid. Returns an empty string if the path is invalid.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>directory_path</strong> – A string representing the directory path.</p>
+<dd class="field-odd"><p><strong>directory_path</strong> (<em>str</em>) – A string representing the directory path.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A string representing the original directory path if it is valid,
 otherwise an empty string.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
@@ -242,10 +245,10 @@ otherwise an empty string.</p>
 <dd class="field-odd"><p><strong>symbol</strong> (<em>str</em>) – a stock name or a stock code.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>str, code:str)…]: a list of stock name-code pairs.</p>
+<dd class="field-even"><p>a list of stock name-code pairs.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>[(name</p>
+<dd class="field-odd"><p>[(str, str)]</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>

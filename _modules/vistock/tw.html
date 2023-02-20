@@ -124,7 +124,7 @@
 <span class="sd">            str_mode (int): a parameter of GET requests.</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">            (name, code) pair of first found stock.</span>
+<span class="sd">            (str, str): a name-code pair of first found stock.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://isin.twse.com.tw/isin/C_public.jsp&#39;</span>
         <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;strMode&#39;</span><span class="p">:</span> <span class="n">str_mode</span><span class="p">}</span>
@@ -143,6 +143,7 @@
                     <span class="k">return</span> <span class="n">name</span><span class="p">,</span> <span class="n">code</span>
         <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
 
+
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">as_yfinance</span><span class="p">(</span><span class="n">symbol</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -153,6 +154,12 @@
 
 <span class="sd">        Returns:</span>
 <span class="sd">            str: the yfinance compatible stock symbol.</span>
+
+<span class="sd">        Examples:</span>
+<span class="sd">            &gt;&gt;&gt; Crawler.as_yfinance(&quot;台積電&quot;)</span>
+<span class="sd">            &#39;2330.TW&#39;</span>
+<span class="sd">            &gt;&gt;&gt; Crawler.as_yfinance(&quot;2330&quot;)</span>
+<span class="sd">            &#39;2330.TW&#39;</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># for a listed stock</span>
         <span class="n">_</span><span class="p">,</span> <span class="n">code</span> <span class="o">=</span> <span class="n">Crawler</span><span class="o">.</span><span class="n">_get_name_code_pair</span><span class="p">(</span><span class="n">symbol</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -213,7 +220,8 @@
 <span class="sd">            value_field (str): the name of a value field.</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">            a list of (key, value) pairs: (key, value) pairs with similar keys.</span>
+<span class="sd">            [(str, str)]: a list of key-value pairs representing the similar</span>
+<span class="sd">                          stocks.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
         <span class="n">json_rows</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -226,6 +234,8 @@
 
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">yfinance_symbol_from_name</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get yfinance compatible symbol from a Taiwan stock name.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="c1"># for a listed stock</span>
         <span class="n">listed_stock_code</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span>
             <span class="n">OpenAPI</span><span class="o">.</span><span class="n">value_from_key</span><span class="p">,</span>
@@ -267,6 +277,8 @@
 
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">stock_name</span><span class="p">(</span><span class="n">code</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get stock name from its code.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">code</span> <span class="o">=</span> <span class="n">code</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.TWO&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
         <span class="n">code</span> <span class="o">=</span> <span class="n">code</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.TW&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
         <span class="n">name</span> <span class="o">=</span> <span class="n">OpenAPI</span><span class="o">.</span><span class="n">listed_stock_name</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
@@ -283,6 +295,8 @@
 
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">yfinance_symbol_from_code</span><span class="p">(</span><span class="n">code</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get yfinance compatible symbol from a Taiwan stock code.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">name</span> <span class="o">=</span> <span class="n">OpenAPI</span><span class="o">.</span><span class="n">listed_stock_name</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">name</span><span class="p">:</span>
             <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">code</span><span class="si">}</span><span class="s1">.TW&#39;</span>
@@ -364,7 +378,7 @@
 <span class="sd">        symbol (str): a stock name or a stock code.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        [(name:str, code:str)...]: a list of stock name-code pairs.</span>
+<span class="sd">        [(str, str)]: a list of stock name-code pairs.</span>
 
 <span class="sd">    Examples:</span>
 <span class="sd">        &gt;&gt;&gt; similar_stocks(&#39;印度&#39;)</span>
