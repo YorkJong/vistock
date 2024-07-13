@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../../">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>vistock.tw &mdash; vistock 0.2.5 documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=cb850272"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" /> 
@@ -380,7 +384,9 @@
 <span class="c1"># Public Functions</span>
 <span class="c1">#------------------------------------------------------------------------------</span>
 
-<div class="viewcode-block" id="as_yfinance"><a class="viewcode-back" href="../../vistock.html#vistock.tw.as_yfinance">[docs]</a><span class="nd">@functools</span><span class="o">.</span><span class="n">lru_cache</span>
+<div class="viewcode-block" id="as_yfinance">
+<a class="viewcode-back" href="../../vistock.html#vistock.tw.as_yfinance">[docs]</a>
+<span class="nd">@functools</span><span class="o">.</span><span class="n">lru_cache</span>
 <span class="k">def</span> <span class="nf">as_yfinance</span><span class="p">(</span><span class="n">symbol</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Convert a given stock symbol into yfinance compatible stock symbol.</span>
@@ -414,7 +420,10 @@
     <span class="k">return</span> <span class="n">symbol</span></div>
 
 
-<div class="viewcode-block" id="similar_stocks"><a class="viewcode-back" href="../../vistock.html#vistock.tw.similar_stocks">[docs]</a><span class="k">def</span> <span class="nf">similar_stocks</span><span class="p">(</span><span class="n">symbol</span><span class="p">):</span>
+
+<div class="viewcode-block" id="similar_stocks">
+<a class="viewcode-back" href="../../vistock.html#vistock.tw.similar_stocks">[docs]</a>
+<span class="k">def</span> <span class="nf">similar_stocks</span><span class="p">(</span><span class="n">symbol</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Get similar stock of a given stock.</span>
 
 <span class="sd">    Args:</span>
@@ -460,6 +469,7 @@
     <span class="k">if</span> <span class="n">stocks</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">stocks</span>
     <span class="k">return</span> <span class="n">similar_EOTC_stocks</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></div>
+
 
 
 <span class="c1">#------------------------------------------------------------------------------</span>

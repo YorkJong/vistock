@@ -1,19 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>vistock.mpl package &mdash; vistock 0.2.5 documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=cb850272"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -87,17 +91,17 @@
            <div itemprop="articleBody">
              
   <section id="vistock-mpl-package">
-<h1>vistock.mpl package<a class="headerlink" href="#vistock-mpl-package" title="Permalink to this heading"></a></h1>
+<h1>vistock.mpl package<a class="headerlink" href="#vistock-mpl-package" title="Link to this heading"></a></h1>
 <section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
 </section>
 <section id="module-vistock.mpl.pbv">
-<span id="vistock-mpl-pbv-module"></span><h2>vistock.mpl.pbv module<a class="headerlink" href="#module-vistock.mpl.pbv" title="Permalink to this heading"></a></h2>
+<span id="vistock-mpl-pbv-module"></span><h2>vistock.mpl.pbv module<a class="headerlink" href="#module-vistock.mpl.pbv" title="Link to this heading"></a></h2>
 <p>Visualize a PBV (means price-by-volume, also called volume profile) for a given
 stock. Here the PBV is overlaid with the price subplot (total 2 subplots).</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="vistock.mpl.pbv.plot">
-<span class="sig-prename descclassname"><span class="pre">vistock.mpl.pbv.</span></span><span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'TSLA'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'12mo'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1d'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ma_nitems</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(5,</span> <span class="pre">10,</span> <span class="pre">20,</span> <span class="pre">50,</span> <span class="pre">150)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vma_nitems</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">42</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend_loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'best'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'out'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vistock/mpl/pbv.html#plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vistock.mpl.pbv.plot" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">vistock.mpl.pbv.</span></span><span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'TSLA'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'12mo'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1d'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ma_nitems</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(5,</span> <span class="pre">10,</span> <span class="pre">20,</span> <span class="pre">50,</span> <span class="pre">150)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vma_nitems</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">42</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend_loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'best'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'out'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vistock/mpl/pbv.html#plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vistock.mpl.pbv.plot" title="Link to this definition"></a></dt>
 <dd><p>Plot a price-by-volume, PBV (also called volume profile) figure for a
 given stock.</p>
 <p>Here the PBV is overlaid with the price subplot. This figure consists of
@@ -160,7 +164,7 @@ Yahoo does)</p></li>
 
 </section>
 <section id="module-vistock.mpl.rsi">
-<span id="vistock-mpl-rsi-module"></span><h2>vistock.mpl.rsi module<a class="headerlink" href="#module-vistock.mpl.rsi" title="Permalink to this heading"></a></h2>
+<span id="vistock-mpl-rsi-module"></span><h2>vistock.mpl.rsi module<a class="headerlink" href="#module-vistock.mpl.rsi" title="Link to this heading"></a></h2>
 <p>Plot a 3-split (price, volume, RSI) stock chart.</p>
 <ul class="simple">
 <li><p>Data from yfinance</p></li>
@@ -169,7 +173,7 @@ Yahoo does)</p></li>
 </ul>
 <dl class="py function">
 <dt class="sig sig-object py" id="vistock.mpl.rsi.plot">
-<span class="sig-prename descclassname"><span class="pre">vistock.mpl.rsi.</span></span><span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'TSLA'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'12mo'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1d'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ma_nitems</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(5,</span> <span class="pre">10,</span> <span class="pre">20,</span> <span class="pre">50,</span> <span class="pre">150)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vma_nitems</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend_loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'best'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'out'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vistock/mpl/rsi.html#plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vistock.mpl.rsi.plot" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">vistock.mpl.rsi.</span></span><span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'TSLA'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'12mo'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1d'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ma_nitems</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(5,</span> <span class="pre">10,</span> <span class="pre">20,</span> <span class="pre">50,</span> <span class="pre">150)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vma_nitems</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend_loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'best'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'out'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vistock/mpl/rsi.html#plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vistock.mpl.rsi.plot" title="Link to this definition"></a></dt>
 <dd><p>Plot a stock figure that consists 3 suplots: a price subplot, a
 volume subplot, and a RSI subplot.</p>
 <p>The price subplot shows price candlesticks, and price moving-average lines.
@@ -230,7 +234,7 @@ Yahoo does)</p></li>
 
 </section>
 <section id="module-vistock.mpl">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-vistock.mpl" title="Permalink to this heading"></a></h2>
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-vistock.mpl" title="Link to this heading"></a></h2>
 <p>Initialize vistock.mpl package.</p>
 </section>
 </section>
