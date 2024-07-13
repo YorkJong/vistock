@@ -77,9 +77,9 @@
 <span class="sd">stock. Here the PBV is overlaid with the price subplot (total 2 subplots).</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="n">__software__</span> <span class="o">=</span> <span class="s2">&quot;Volume Profile 2-split with mplfinace&quot;</span>
-<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;1.4&quot;</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;1.5&quot;</span>
 <span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;York &lt;york.jong@gmail.com&gt;&quot;</span>
-<span class="n">__date__</span> <span class="o">=</span> <span class="s2">&quot;2023/02/02 (initial version) ~ 2023/02/20 (last revision)&quot;</span>
+<span class="n">__date__</span> <span class="o">=</span> <span class="s2">&quot;2023/02/02 (initial version) ~ 2024/07/14 (last revision)&quot;</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;plot&#39;</span><span class="p">]</span>
 
@@ -180,7 +180,12 @@
         <span class="n">returnfig</span><span class="o">=</span><span class="kc">True</span>
     <span class="p">)</span>
     <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="sa">f</span><span class="s1">&#39;MA </span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">ma_nitems</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="n">legend_loc</span><span class="p">)</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Convert datetime index to string format suitable for display</span>
+    <span class="k">if</span> <span class="n">interval</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;m&#39;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">interval</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;h&#39;</span><span class="p">):</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">symbol</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">interval</span><span class="si">}</span><span class="s2"> &quot;</span>
                  <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">~</span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">,</span>
                  <span class="n">y</span><span class="o">=</span><span class="mf">0.93</span><span class="p">)</span>
