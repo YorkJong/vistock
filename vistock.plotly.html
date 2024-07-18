@@ -54,9 +54,9 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="vistock.html#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="vistock.html#module-vistock.file_util">vistock.file_util module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vistock.html#vistock-file-util-module">vistock.file_util module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="vistock.html#module-vistock.tw">vistock.tw module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="vistock.html#module-vistock">Module contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vistock.html#module-contents">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -94,284 +94,23 @@
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
 </section>
-<section id="module-vistock.plotly.fig_util">
-<span id="vistock-plotly-fig-util-module"></span><h2>vistock.plotly.fig_util module<a class="headerlink" href="#module-vistock.plotly.fig_util" title="Link to this heading"></a></h2>
-<p>Common utility for Plotly figures.</p>
-<dl class="py function">
-<dt class="sig sig-object py" id="vistock.plotly.fig_util.add_crosshair_cursor">
-<span class="sig-prename descclassname"><span class="pre">vistock.plotly.fig_util.</span></span><span class="sig-name descname"><span class="pre">add_crosshair_cursor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fig</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vistock/plotly/fig_util.html#add_crosshair_cursor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vistock.plotly.fig_util.add_crosshair_cursor" title="Link to this definition"></a></dt>
-<dd><p>Add crosshair cursor to a given figure.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>fig</strong> (<em>plotly.graph_objects.Figure</em>) – the figure</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="vistock.plotly.fig_util.add_hovermode_menu">
-<span class="sig-prename descclassname"><span class="pre">vistock.plotly.fig_util.</span></span><span class="sig-name descname"><span class="pre">add_hovermode_menu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fig</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.05</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vistock/plotly/fig_util.html#add_hovermode_menu"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vistock.plotly.fig_util.add_hovermode_menu" title="Link to this definition"></a></dt>
-<dd><p>Add a dropdown menu for selecting a hover mode.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>fig</strong> (<em>plotly.graph_objects.Figure</em>) – the figure.</p></li>
-<li><p><strong>x</strong> (<em>int</em>) – the x position of the menu</p></li>
-<li><p><strong>y</strong> (<em>int</em>) – the y position of the menu</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="vistock.plotly.fig_util.hide_nontrading_periods">
-<span class="sig-prename descclassname"><span class="pre">vistock.plotly.fig_util.</span></span><span class="sig-name descname"><span class="pre">hide_nontrading_periods</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fig</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vistock/plotly/fig_util.html#hide_nontrading_periods"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vistock.plotly.fig_util.hide_nontrading_periods" title="Link to this definition"></a></dt>
-<dd><p>Hide non-tranding time-periods.</p>
-<p>This function can hide certain time-periods to avoid the gaps at
-non-trading time-periods.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>fig</strong> (<em>plotly.graph_objects.figure</em>) – the figure</p></li>
-<li><p><strong>df</strong> (<em>pandas.DataFrame</em>) – the stock table</p></li>
-<li><p><strong>interval</strong> (<em>str</em>) – <p>the interval of an OHLC item.
-Valid values are 1m, 2m, 5m, 15m, 30m, 60m, 90m, 1h, 1d, 5d, 1wk, 1mo,
-3mo. Intraday data cannot extend last 60 days:</p>
-<ul>
-<li><p>1m - max 7 days within last 30 days</p></li>
-<li><p>up to 90m - max 60 days</p></li>
-<li><p>60m, 1h - max 730 days (yes 1h is technically &lt; 90m but this what
-Yahoo does)</p></li>
-</ul>
-</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
+<section id="vistock-plotly-fig-util-module">
+<h2>vistock.plotly.fig_util module<a class="headerlink" href="#vistock-plotly-fig-util-module" title="Link to this heading"></a></h2>
 </section>
-<section id="module-vistock.plotly.pbv2s">
-<span id="vistock-plotly-pbv2s-module"></span><h2>vistock.plotly.pbv2s module<a class="headerlink" href="#module-vistock.plotly.pbv2s" title="Link to this heading"></a></h2>
-<p>Visualize a PBV (means price-by-volume, also called volume profile) for a given
-stock. Here the PBV is overlaid with the price subplot (total 2 subplots).</p>
-<dl class="py function">
-<dt class="sig sig-object py" id="vistock.plotly.pbv2s.plot">
-<span class="sig-prename descclassname"><span class="pre">vistock.plotly.pbv2s.</span></span><span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'TSLA'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'12mo'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1d'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ma_nitems</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(5,</span> <span class="pre">10,</span> <span class="pre">20,</span> <span class="pre">50,</span> <span class="pre">150)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vma_nitems</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">42</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hides_nontrading</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'out'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hbar_align_on_right</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vistock/plotly/pbv2s.html#plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vistock.plotly.pbv2s.plot" title="Link to this definition"></a></dt>
-<dd><p>Plot a price-by-volume, PBV  (also called volume profile) figure for a
-given stock. This figure shows the volume distribution across price levels
-for a stock.</p>
-<p>Here the PBV is overlaied with the price subplot. This figure consists of
-two subplots: a price subplot and a volume subplot. The former includes
-candlestick, moving average lines, while the latter includes trading volume
-bar chart and volume moving average line.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>symbol</strong> (<em>str</em>) – the stock symbol.</p></li>
-<li><p><strong>period</strong> (<em>str</em>) – <p>the period data to download. Valid values are 1d, 5d, 1mo, 3mo, 6mo,
-1y, 2y, 5y, 10y, ytd, max.</p>
-<ul>
-<li><p>d   – days</p></li>
-<li><p>mo  – monthes</p></li>
-<li><p>y   – years</p></li>
-<li><p>ytd – year to date</p></li>
-<li><p>max – all data</p></li>
-</ul>
-</p></li>
-<li><p><strong>interval</strong> (<em>str</em>) – <p>the interval of an OHLC item. Valid values are 1m, 2m, 5m, 15m, 30m,
-60m, 90m, 1h, 1d, 5d, 1wk, 1mo, 3mo.</p>
-<ul>
-<li><p>m  – minutes</p></li>
-<li><p>h  – hours</p></li>
-<li><p>wk – weeks</p></li>
-<li><p>mo – monthes</p></li>
-</ul>
-<p>Intraday data cannot extend last 60 days:</p>
-<ul>
-<li><p>1m - max 7 days within last 30 days</p></li>
-<li><p>up to 90m - max 60 days</p></li>
-<li><p>60m, 1h - max 730 days (yes 1h is technically &lt; 90m but this what
-Yahoo does)</p></li>
-</ul>
-</p></li>
-<li><p><strong>ma_nitems</strong> (<em>sequence</em><em> of </em><em>int</em>) – a sequence to list the number of data items to calclate moving averges.</p></li>
-<li><p><strong>vma_nitems</strong> (<em>int</em>) – the number of data items to calculate the volume moving average.</p></li>
-<li><p><strong>total_bins</strong> (<em>int</em>) – the number of bins to calculate comulative volume for bins.</p></li>
-<li><p><strong>hides_nontrading</strong> (<em>bool</em>) – decide if hides non-trading time-periods.</p></li>
-<li><p><strong>out_dir</strong> (<em>str</em>) – the output directory for saving figure.</p></li>
-<li><p><strong>hbar_align_on_right</strong> (<em>bool</em>) – decide if the price-by-volume bars align on right. True to set the
-starting position of the horizontal bars to the right; False the left.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
+<section id="vistock-plotly-pbv2s-module">
+<h2>vistock.plotly.pbv2s module<a class="headerlink" href="#vistock-plotly-pbv2s-module" title="Link to this heading"></a></h2>
 </section>
-<section id="module-vistock.plotly.pbv4s">
-<span id="vistock-plotly-pbv4s-module"></span><h2>vistock.plotly.pbv4s module<a class="headerlink" href="#module-vistock.plotly.pbv4s" title="Link to this heading"></a></h2>
-<p>Visualize a PBV (means price-by-volume, also called volume profile) for a given
-stock. Here the PBV occupies a split of a 4-split chart.</p>
-<dl class="py function">
-<dt class="sig sig-object py" id="vistock.plotly.pbv4s.plot">
-<span class="sig-prename descclassname"><span class="pre">vistock.plotly.pbv4s.</span></span><span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'TSLA'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'12mo'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1d'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ma_nitems</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(5,</span> <span class="pre">10,</span> <span class="pre">20,</span> <span class="pre">50,</span> <span class="pre">150)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vma_nitems</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">42</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hides_nontrading</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'out'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vistock/plotly/pbv4s.html#plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vistock.plotly.pbv4s.plot" title="Link to this definition"></a></dt>
-<dd><p>Plot a price-by-volume, PBV (also called volume profile) figure for a
-given stock. This figure shows the volume distribution across price levels
-for a stock.</p>
-<p>Here the PBV occupies a split of a 4-split figure. This figure also includes
-candlesticks, price moving average lines, volume histogram, and a volume
-moving average line.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>symbol</strong> (<em>str</em>) – the stock symbol.</p></li>
-<li><p><strong>period</strong> (<em>str</em>) – <p>the period data to download. Valid values are 1d, 5d, 1mo, 3mo, 6mo,
-1y, 2y, 5y, 10y, ytd, max.</p>
-<ul>
-<li><p>d   – days</p></li>
-<li><p>mo  – monthes</p></li>
-<li><p>y   – years</p></li>
-<li><p>ytd – year to date</p></li>
-<li><p>max – all data</p></li>
-</ul>
-</p></li>
-<li><p><strong>interval</strong> (<em>str</em>) – <p>the interval of an OHLC item. Valid values are 1m, 2m, 5m, 15m, 30m,
-60m, 90m, 1h, 1d, 5d, 1wk, 1mo, 3mo.</p>
-<ul>
-<li><p>m  – minutes</p></li>
-<li><p>h  – hours</p></li>
-<li><p>wk – weeks</p></li>
-<li><p>mo – monthes</p></li>
-</ul>
-<p>Intraday data cannot extend last 60 days:</p>
-<ul>
-<li><p>1m - max 7 days within last 30 days</p></li>
-<li><p>up to 90m - max 60 days</p></li>
-<li><p>60m, 1h - max 730 days (yes 1h is technically &lt; 90m but this what
-Yahoo does)</p></li>
-</ul>
-</p></li>
-<li><p><strong>ma_nitems</strong> (<em>sequence</em><em> of </em><em>int</em>) – a sequence to list the number of data items to calclate moving averges.</p></li>
-<li><p><strong>vma_nitems</strong> (<em>int</em>) – the number of data items to calculate the volume moving average.</p></li>
-<li><p><strong>total_bins</strong> (<em>int</em>) – the number of bins to calculate comulative volume for bins.</p></li>
-<li><p><strong>hides_nontrading</strong> (<em>bool</em>) – decide if hides non-trading time-periods.</p></li>
-<li><p><strong>out_dir</strong> (<em>str</em>) – the output directory for saving figure.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
+<section id="vistock-plotly-pbv4s-module">
+<h2>vistock.plotly.pbv4s module<a class="headerlink" href="#vistock-plotly-pbv4s-module" title="Link to this heading"></a></h2>
 </section>
-<section id="module-vistock.plotly.pv1s">
-<span id="vistock-plotly-pv1s-module"></span><h2>vistock.plotly.pv1s module<a class="headerlink" href="#module-vistock.plotly.pv1s" title="Link to this heading"></a></h2>
-<p>Show a price-and-volume overlaid stock chart.</p>
-<ul class="simple">
-<li><p>Data from yfinance</p></li>
-<li><p>Plot with Plotly (for candlestick, MA, volume, volume MA)</p></li>
-</ul>
-<dl class="py function">
-<dt class="sig sig-object py" id="vistock.plotly.pv1s.plot">
-<span class="sig-prename descclassname"><span class="pre">vistock.plotly.pv1s.</span></span><span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'TSLA'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'12mo'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1d'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ma_nitems</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(5,</span> <span class="pre">10,</span> <span class="pre">20,</span> <span class="pre">50,</span> <span class="pre">150)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vma_nitems</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hides_nontrading</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'out'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vistock/plotly/pv1s.html#plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vistock.plotly.pv1s.plot" title="Link to this definition"></a></dt>
-<dd><p>Plot a stock figure overlaying charts in a single subplot.</p>
-<p>These charts include candlesticks, price moving-average lines, a volume
-histogram, and a volume moving-average line.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>symbol</strong> (<em>str</em>) – the stock symbol.</p></li>
-<li><p><strong>period</strong> (<em>str</em>) – <p>the period data to download. Valid values are 1d, 5d, 1mo, 3mo, 6mo,
-1y, 2y, 5y, 10y, ytd, max.</p>
-<ul>
-<li><p>d   – days</p></li>
-<li><p>mo  – monthes</p></li>
-<li><p>y   – years</p></li>
-<li><p>ytd – year to date</p></li>
-<li><p>max – all data</p></li>
-</ul>
-</p></li>
-<li><p><strong>interval</strong> (<em>str</em>) – <p>the interval of an OHLC item. Valid values are 1m, 2m, 5m, 15m, 30m,
-60m, 90m, 1h, 1d, 5d, 1wk, 1mo, 3mo.</p>
-<ul>
-<li><p>m  – minutes</p></li>
-<li><p>h  – hours</p></li>
-<li><p>wk – weeks</p></li>
-<li><p>mo – monthes</p></li>
-</ul>
-<p>Intraday data cannot extend last 60 days:</p>
-<ul>
-<li><p>1m - max 7 days within last 30 days</p></li>
-<li><p>up to 90m - max 60 days</p></li>
-<li><p>60m, 1h - max 730 days (yes 1h is technically &lt; 90m but this what
-Yahoo does)</p></li>
-</ul>
-</p></li>
-<li><p><strong>ma_nitems</strong> (<em>sequence</em><em> of </em><em>int</em>) – a sequence to list the number of data items to calclate moving averges.</p></li>
-<li><p><strong>vma_nitems</strong> (<em>int</em>) – the number of data items to calculate the volume moving average.</p></li>
-<li><p><strong>hides_nontrading</strong> (<em>bool</em>) – decide if hides non-trading time-periods.</p></li>
-<li><p><strong>out_dir</strong> (<em>str</em>) – the output directory for saving figure.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
+<section id="vistock-plotly-pv1s-module">
+<h2>vistock.plotly.pv1s module<a class="headerlink" href="#vistock-plotly-pv1s-module" title="Link to this heading"></a></h2>
 </section>
-<section id="module-vistock.plotly.pv2s">
-<span id="vistock-plotly-pv2s-module"></span><h2>vistock.plotly.pv2s module<a class="headerlink" href="#module-vistock.plotly.pv2s" title="Link to this heading"></a></h2>
-<p>Show a price-and-volume separated stock chart.</p>
-<ul class="simple">
-<li><p>Data from yfinance</p></li>
-<li><p>Plot with Plotly (for candlestick, MA, volume, volume MA)</p></li>
-</ul>
-<dl class="py function">
-<dt class="sig sig-object py" id="vistock.plotly.pv2s.plot">
-<span class="sig-prename descclassname"><span class="pre">vistock.plotly.pv2s.</span></span><span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'TSLA'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'12mo'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1d'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ma_nitems</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(5,</span> <span class="pre">10,</span> <span class="pre">20,</span> <span class="pre">50,</span> <span class="pre">150)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vma_nitems</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hides_nontrading</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'out'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vistock/plotly/pv2s.html#plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vistock.plotly.pv2s.plot" title="Link to this definition"></a></dt>
-<dd><p>Plot a stock figure that consists of two subplots: a price subplot and
-a volume subplot.</p>
-<p>The price subplot includes candlesticks, moving average lines, while
-the volume subplot includes a volume histogram and a volume moving average
-line.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>symbol</strong> (<em>str</em>) – the stock symbol.</p></li>
-<li><p><strong>period</strong> (<em>str</em>) – <p>the period data to download. Valid values are 1d, 5d, 1mo, 3mo, 6mo,
-1y, 2y, 5y, 10y, ytd, max.</p>
-<ul>
-<li><p>d   – days</p></li>
-<li><p>mo  – monthes</p></li>
-<li><p>y   – years</p></li>
-<li><p>ytd – year to date</p></li>
-<li><p>max – all data</p></li>
-</ul>
-</p></li>
-<li><p><strong>interval</strong> (<em>str</em>) – <p>the interval of an OHLC item. Valid values are 1m, 2m, 5m, 15m, 30m,
-60m, 90m, 1h, 1d, 5d, 1wk, 1mo, 3mo.</p>
-<ul>
-<li><p>m  – minutes</p></li>
-<li><p>h  – hours</p></li>
-<li><p>wk – weeks</p></li>
-<li><p>mo – monthes</p></li>
-</ul>
-<p>Intraday data cannot extend last 60 days:</p>
-<ul>
-<li><p>1m - max 7 days within last 30 days</p></li>
-<li><p>up to 90m - max 60 days</p></li>
-<li><p>60m, 1h - max 730 days (yes 1h is technically &lt; 90m but this what
-Yahoo does)</p></li>
-</ul>
-</p></li>
-<li><p><strong>ma_nitems</strong> (<em>sequence</em><em> of </em><em>int</em>) – a sequence to list the number of data items to calclate moving averges.</p></li>
-<li><p><strong>vma_nitems</strong> (<em>int</em>) – the number of data items to calculate the volume moving average.</p></li>
-<li><p><strong>hides_nontrading</strong> (<em>bool</em>) – decide if hides non-trading time-periods.</p></li>
-<li><p><strong>out_dir</strong> (<em>str</em>) – the output directory for saving figure.</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
+<section id="vistock-plotly-pv2s-module">
+<h2>vistock.plotly.pv2s module<a class="headerlink" href="#vistock-plotly-pv2s-module" title="Link to this heading"></a></h2>
 </section>
-<section id="module-vistock.plotly">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-vistock.plotly" title="Link to this heading"></a></h2>
-<p>Initialize vistock.plotly package.</p>
+<section id="module-contents">
+<h2>Module contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
 </section>
 </section>
 
