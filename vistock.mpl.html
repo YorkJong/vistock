@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>vistock.mpl package &mdash; vistock 0.3.1 documentation</title>
+  <title>vistock.mpl package &mdash; vistock 0.3.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
 
@@ -15,7 +15,7 @@
   
         <script src="_static/jquery.js?v=5d32c60e"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=4621528c"></script>
+        <script src="_static/documentation_options.js?v=71d9d8e6"></script>
         <script src="_static/doctools.js?v=9a2dae69"></script>
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -108,7 +108,7 @@
 </ul>
 <dl class="py function">
 <dt class="sig sig-object py" id="vistock.mpl.rsi.plot">
-<span class="sig-prename descclassname"><span class="pre">vistock.mpl.rsi.</span></span><span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'TSLA'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'12mo'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1d'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ma_nitems</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(5,</span> <span class="pre">10,</span> <span class="pre">20,</span> <span class="pre">50,</span> <span class="pre">150)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vma_nitems</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend_loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'best'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'out'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vistock/mpl/rsi.html#plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vistock.mpl.rsi.plot" title="Link to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">vistock.mpl.rsi.</span></span><span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'TSLA'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'12mo'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1d'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ma_nitems</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(5,</span> <span class="pre">10,</span> <span class="pre">20,</span> <span class="pre">50,</span> <span class="pre">150)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vma_nitems</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend_loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'best'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">market_color_style</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">MarketColorStyle.AUTO</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'out'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/vistock/mpl/rsi.html#plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vistock.mpl.rsi.plot" title="Link to this definition"></a></dt>
 <dd><p>Plot a stock figure that consists 3 suplots: a price subplot, a
 volume subplot, and a RSI subplot.</p>
 <p>The price subplot shows price candlesticks, and price moving-average lines.
@@ -161,6 +161,7 @@ Yahoo does)</p></li>
 <li><p>’center’</p></li>
 </ul>
 </p></li>
+<li><p><strong>(</strong><strong>MarketColorStyle</strong><strong>)</strong> (<em>market_color_style</em>) – Default is MarketColorStyle.AUTO.</p></li>
 <li><p><strong>out_dir</strong> (<em>str</em>) – the output directory for saving figure.</p></li>
 </ul>
 </dd>
