@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>vistock.mpl.rsi &mdash; vistock 0.3.2 documentation</title>
+  <title>vistock.mpl.rsi &mdash; vistock 0.3.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
 
@@ -14,7 +14,7 @@
   
         <script src="../../../_static/jquery.js?v=5d32c60e"></script>
         <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../../_static/documentation_options.js?v=71d9d8e6"></script>
+        <script src="../../../_static/documentation_options.js?v=d5a15cff"></script>
         <script src="../../../_static/doctools.js?v=9a2dae69"></script>
         <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/js/theme.js"></script>
@@ -80,9 +80,9 @@
 <span class="sd">* RSI from TA-Lib</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="n">__software__</span> <span class="o">=</span> <span class="s2">&quot;Stock chart of price, volume, and RSI&quot;</span>
-<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;1.6&quot;</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;1.7&quot;</span>
 <span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;York &lt;york.jong@gmail.com&gt;&quot;</span>
-<span class="n">__date__</span> <span class="o">=</span> <span class="s2">&quot;2023/02/02 (initial version) ~ 2023/07/22 (last revision)&quot;</span>
+<span class="n">__date__</span> <span class="o">=</span> <span class="s2">&quot;2023/02/02 (initial version) ~ 2023/07/31 (last revision)&quot;</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;plot&#39;</span><span class="p">]</span>
 
@@ -94,6 +94,7 @@
 <span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">file_util</span>
 <span class="kn">from</span> <span class="nn">..util</span> <span class="kn">import</span> <span class="n">MarketColorStyle</span><span class="p">,</span> <span class="n">decide_market_color_style</span>
 <span class="kn">from</span> <span class="nn">.mpf_util</span> <span class="kn">import</span> <span class="n">decide_mpf_style</span>
+<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">ta</span>
 
 
 <span class="k">def</span> <span class="nf">installed</span><span class="p">(</span><span class="n">module_name</span><span class="p">):</span>
@@ -183,14 +184,13 @@
                            <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="n">panel</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">addplot</span> <span class="o">=</span> <span class="p">[</span><span class="n">vma</span><span class="p">]</span>
 
-    <span class="k">if</span> <span class="n">installed</span><span class="p">(</span><span class="s1">&#39;talib&#39;</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">talib</span> <span class="kn">import</span> <span class="n">abstract</span>
-        <span class="c1"># Add RSI</span>
-        <span class="n">RSI</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">df</span><span class="p">,</span> <span class="n">period</span><span class="p">:</span> <span class="n">abstract</span><span class="o">.</span><span class="n">RSI</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">timeperiod</span><span class="o">=</span><span class="n">period</span><span class="p">)</span>
-        <span class="n">rsi</span> <span class="o">=</span> <span class="n">mpf</span><span class="o">.</span><span class="n">make_addplot</span><span class="p">(</span><span class="n">RSI</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">],</span> <span class="mi">14</span><span class="p">),</span> <span class="n">panel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;RSI&#39;</span><span class="p">)</span>
-        <span class="n">addplot</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rsi</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Please install &quot;talib&quot; package.&#39;</span><span class="p">)</span>
+    <span class="c1"># Add RSI</span>
+    <span class="n">rsi</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">mpf</span><span class="o">.</span><span class="n">make_addplot</span><span class="p">(</span><span class="n">ta</span><span class="o">.</span><span class="n">rsi</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]),</span> <span class="n">panel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;RSI&#39;</span><span class="p">),</span>
+        <span class="n">mpf</span><span class="o">.</span><span class="n">make_addplot</span><span class="p">([</span><span class="mi">70</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">),</span> <span class="n">panel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">),</span>
+        <span class="n">mpf</span><span class="o">.</span><span class="n">make_addplot</span><span class="p">([</span><span class="mi">30</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">),</span> <span class="n">panel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="n">addplot</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">rsi</span><span class="p">)</span>
 
     <span class="c1"># Make a customized color style</span>
     <span class="n">mc_style</span> <span class="o">=</span> <span class="n">decide_market_color_style</span><span class="p">(</span><span class="n">ticker</span><span class="p">,</span> <span class="n">market_color_style</span><span class="p">)</span>
