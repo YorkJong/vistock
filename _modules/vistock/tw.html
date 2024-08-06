@@ -180,7 +180,8 @@
         <span class="k">if</span> <span class="n">code</span><span class="p">:</span>
             <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">code</span><span class="si">}</span><span class="s1">.TWO&#39;</span>
 
-        <span class="c1"># for an emerging OTC stock</span>
+        <span class="c1"># for an ESB stock. ESB stands for Emerging Stock Board (also called</span>
+        <span class="c1"># Emerging Stock Market, or Emerging OTC)</span>
         <span class="n">_</span><span class="p">,</span> <span class="n">code</span> <span class="o">=</span> <span class="n">Crawler</span><span class="o">.</span><span class="n">_get_name_code_pair</span><span class="p">(</span><span class="n">symbol</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">code</span><span class="p">:</span>
             <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">code</span><span class="si">}</span><span class="s1">.TWO&#39;</span>
@@ -275,8 +276,9 @@
             <span class="n">value_field</span><span class="o">=</span><span class="s1">&#39;SecuritiesCompanyCode&#39;</span>
         <span class="p">)</span>
 
-        <span class="c1"># for an emerging OTC stock</span>
-        <span class="n">EOTC_stock_code</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span>
+        <span class="c1"># for an ESB stock. ESB stands for Emerging Stock Board (also called</span>
+        <span class="c1"># Emerging Stock Market, or Emerging OTC)</span>
+        <span class="n">ESB_stock_code</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span>
             <span class="n">OpenAPI</span><span class="o">.</span><span class="n">value_from_key</span><span class="p">,</span>
             <span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://www.tpex.org.tw/openapi/v1/&#39;</span>
                 <span class="s1">&#39;tpex_esb_latest_statistics&#39;</span><span class="p">,</span>
@@ -290,7 +292,7 @@
         <span class="n">code</span> <span class="o">=</span> <span class="n">OTC_stock_code</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">code</span><span class="p">:</span>
             <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">code</span><span class="si">}</span><span class="s1">.TWO&#39;</span>
-        <span class="n">code</span> <span class="o">=</span> <span class="n">EOTC_stock_code</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">code</span> <span class="o">=</span> <span class="n">ESB_stock_code</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">code</span><span class="p">:</span>
             <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">code</span><span class="si">}</span><span class="s1">.TWO&#39;</span>
         <span class="k">return</span> <span class="n">name</span>
@@ -320,7 +322,7 @@
         <span class="n">name</span> <span class="o">=</span> <span class="n">OpenAPI</span><span class="o">.</span><span class="n">OTC_stock_name</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">name</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">name</span>
-        <span class="n">name</span> <span class="o">=</span> <span class="n">OpenAPI</span><span class="o">.</span><span class="n">EOTC_stock_name</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">OpenAPI</span><span class="o">.</span><span class="n">ESB_stock_name</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">name</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">name</span>
         <span class="k">return</span> <span class="n">code</span>
@@ -348,7 +350,7 @@
         <span class="n">name</span> <span class="o">=</span> <span class="n">OpenAPI</span><span class="o">.</span><span class="n">OTC_stock_name</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">name</span><span class="p">:</span>
             <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">code</span><span class="si">}</span><span class="s1">.TWO&#39;</span>
-        <span class="n">name</span> <span class="o">=</span> <span class="n">OpenAPI</span><span class="o">.</span><span class="n">EOTC_stock_name</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">OpenAPI</span><span class="o">.</span><span class="n">ESB_stock_name</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">name</span><span class="p">:</span>
             <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">code</span><span class="si">}</span><span class="s1">.TWO&#39;</span>
         <span class="k">return</span> <span class="n">code</span>
@@ -371,8 +373,8 @@
     <span class="n">value_field</span><span class="o">=</span><span class="s1">&#39;CompanyName&#39;</span>
 <span class="p">)</span>
 
-<span class="c1"># for an emerging OTC stock</span>
-<span class="n">OpenAPI</span><span class="o">.</span><span class="n">EOTC_stock_name</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span>
+<span class="c1"># for an ESB stock</span>
+<span class="n">OpenAPI</span><span class="o">.</span><span class="n">ESB_stock_name</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span>
     <span class="n">OpenAPI</span><span class="o">.</span><span class="n">value_from_key</span><span class="p">,</span>
     <span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://www.tpex.org.tw/openapi/v1/tpex_esb_latest_statistics&#39;</span><span class="p">,</span>
     <span class="n">key_field</span><span class="o">=</span><span class="s1">&#39;SecuritiesCompanyCode&#39;</span><span class="p">,</span>
@@ -435,6 +437,8 @@
 <span class="sd">    Examples:</span>
 <span class="sd">        &gt;&gt;&gt; similar_stocks(&#39;印度&#39;)</span>
 <span class="sd">        [(&#39;富邦印度&#39;, &#39;00652&#39;), (&#39;富邦印度正2&#39;, &#39;00653L&#39;), (&#39;富邦印度反1&#39;, &#39;00654R&#39;)]</span>
+<span class="sd">        &gt;&gt;&gt; similar_stocks(&#39;永豐美國&#39;)</span>
+<span class="sd">        [(&#39;永豐美國500大&#39;, &#39;00858&#39;), (&#39;永豐美國科技&#39;, &#39;00886&#39;)]</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># for listed stocks</span>
     <span class="n">similar_listed_stocks</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span>
@@ -453,8 +457,8 @@
         <span class="n">value_field</span><span class="o">=</span><span class="s1">&#39;SecuritiesCompanyCode&#39;</span>
     <span class="p">)</span>
 
-    <span class="c1"># for emerging OTC stocks</span>
-    <span class="n">similar_EOTC_stocks</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span>
+    <span class="c1"># for ESB stocks</span>
+    <span class="n">similar_ESB_stocks</span> <span class="o">=</span> <span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span>
         <span class="n">OpenAPI</span><span class="o">.</span><span class="n">similar_keys</span><span class="p">,</span>
         <span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://www.tpex.org.tw/openapi/v1/tpex_esb_latest_statistics&#39;</span><span class="p">,</span>
         <span class="n">key_field</span><span class="o">=</span><span class="s1">&#39;CompanyName&#39;</span><span class="p">,</span>
@@ -468,7 +472,7 @@
     <span class="n">stocks</span> <span class="o">=</span> <span class="n">similar_OTC_stocks</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">stocks</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">stocks</span>
-    <span class="k">return</span> <span class="n">similar_EOTC_stocks</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">similar_ESB_stocks</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></div>
 
 
 
